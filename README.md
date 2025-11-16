@@ -21,7 +21,10 @@ Built using **Appwrite** for backend (Auth + Database).
 - **Database & Auth:** Appwrite  
 
 ---
+## 🖼️ Screenshots
 
+### 🔹 Home Page
+![Home Page](thet.jpg)
 ---
 
 ## 👨‍💻 Author
