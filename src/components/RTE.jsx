@@ -2,7 +2,7 @@
 import React from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import { Controller } from "react-hook-form";
-import conf from "../conf/conf"; // optional: conf.tinyApiKey or use env
+import conf from "../conf/conf"; 
 
 export default function RTE({ name = "content", control, label, defaultValue = "" }) {
   const apiKey = conf?.tinyApiKey || import.meta.env.VITE_TINY_API_KEY || "1ksy8gfylre42wmx3fwfem1mncfrg1m7ywr6vcvhdmucimvk";

@@ -72,10 +72,10 @@ export default function PostForm({ post }) {
                 });
 
                 if (dbPost) {
-                    navigate(`/post/${dbPost.slug}`);  // ✅ FIXED - Use slug instead of $id
+                    navigate(`/post/${dbPost.slug}`);  
                 }
             } else {
-                // CREATE new post
+               
                 console.log("Creating new post...");
                 
                 const file = data.image[0] ? await appwriteService.uploadFile(data.image[0]) : null;
@@ -98,7 +98,7 @@ export default function PostForm({ post }) {
                     console.log("Post created:", dbPost);
 
                     if (dbPost) {
-                        navigate(`/post/${dbPost.slug}`);  // ✅ FIXED - Use slug instead of $id
+                        navigate(`/post/${dbPost.slug}`);  
                     }
                 } else {
                     alert("Please upload an image!");
@@ -106,7 +106,7 @@ export default function PostForm({ post }) {
                 }
             }
         } catch (error) {
-            console.error("❌ ERROR:", error);
+            console.error(" ERROR:", error);
             alert("Error: " + error.message);
         }
     };

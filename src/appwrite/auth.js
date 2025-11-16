@@ -1,4 +1,4 @@
-// src/appwrite/auth.js
+
 import conf from '../conf/conf.js';
 import { Client, Account, ID } from "appwrite";
 
@@ -14,11 +14,11 @@ export class AuthService {
     this.account = new Account(this.client);
   }
 
-  // Signup
+
   async createAccount({ email, password, name }) {
     try {
       const userAccount = await this.account.create(ID.unique(), email, password, name);
-      // If account created, create a session (login) and return its result
+     
       return await this.login({ email, password });
     } catch (error) {
       console.error("Appwrite service :: createAccount :: error", error);
@@ -26,10 +26,10 @@ export class AuthService {
     }
   }
 
-  // Login
+
   async login({ email, password }) {
     try {
-      // Use the correct method name for latest Appwrite SDK
+    
       const session = await this.account.createEmailPasswordSession(email, password);
       return session;
     } catch (error) {

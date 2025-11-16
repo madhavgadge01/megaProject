@@ -3,23 +3,22 @@ import appwriteService from "../appwrite/config"
 import { Link } from 'react-router-dom'
 
 function PostCard({ $id, title, featuredImage, slug }) {
-    
-    // 🔍 Debug logs
+
     console.log("=== PostCard Debug ===");
     console.log("Post ID:", $id);
     console.log("Slug:", slug);
     console.log("Featured Image ID:", featuredImage);
     console.log("Title:", title);
     
-    // Safety check
+ 
     if (!$id || !slug) {
         console.warn("PostCard missing required fields:", { $id, slug });
         return null;
     }
 
-    // Check if featuredImage exists
+
     if (!featuredImage) {
-        console.error("❌ No featuredImage provided!");
+        console.error(" No featuredImage provided!");
         return (
             <Link to={`/post/${slug}`}>
                 <div className='w-full bg-gray-100 rounded-xl p-4 hover:bg-gray-200 transition-all'>
@@ -32,13 +31,13 @@ function PostCard({ $id, title, featuredImage, slug }) {
         );
     }
 
-    // Get image URL and log it
+
     let imageUrl;
     try {
         imageUrl = appwriteService.getFilePreview(featuredImage);
         console.log("✅ Generated Image URL:", imageUrl);
     } catch (error) {
-        console.error("❌ Error generating image URL:", error);
+        console.error("Error generating image URL:", error);
         imageUrl = "https://via.placeholder.com/400x300?text=Error+Loading+Image";
     }
 
@@ -54,7 +53,7 @@ function PostCard({ $id, title, featuredImage, slug }) {
                             console.log("✅ Image loaded successfully for:", title);
                         }}
                         onError={(e) => {
-                            console.error("❌ Image failed to load for:", title);
+                            console.error(" Image failed to load for:", title);
                             console.error("Failed URL:", imageUrl);
                             e.target.src = "https://via.placeholder.com/400x300?text=Image+Not+Found";
                         }}

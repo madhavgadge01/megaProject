@@ -7,7 +7,7 @@ function AllPosts() {
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        appwriteService.getPosts([]).then((posts) => {  // ✅ getPosts not getPost
+        appwriteService.getPosts([]).then((posts) => {  
             if (posts) {
                 setPosts(posts.documents)
             }
