@@ -17,7 +17,7 @@ Built using **Appwrite** for backend (Auth + Database).
 ---
 
 ## 🛠️ Tech Stack
-- **Frontend:** React / Vite (or your setup)    
+- **Frontend:** React / Vite  
 - **Database & Auth:** Appwrite  
 
 ---
